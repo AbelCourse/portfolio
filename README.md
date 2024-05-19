@@ -2,9 +2,9 @@
 
 # Abel Seyoum
 
-[🔗Live Demo🔗](placeholder)
+[Live Demo](placeholder)
 
-![Protfolio Website](https://i.ibb.co/N7xKjdQ/Screenshot-17.png)
+![Protfolio Website](https://raw.githubusercontent.com/AbelCourse/portfolio/main/src/assets/demo.png)
 
 <h1 align=center> 🧠 Thanks for visiting. 🧠 </h1>
 
