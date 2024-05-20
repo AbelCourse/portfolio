@@ -25,30 +25,7 @@ const About = () => {
 							Hi, my name is{' '}
 							<span className='yellow'>Abel Seyoum </span>
 							and I live in{' '}
-							<span className='yellow'>
-								{' '}
-								Silver Spring, Maryland.
-							</span>
-							<br />
-							<br />
-							I am currently pursuing my master's in Computer
-							Science. I graduated with a Bachelor's degree in
-							Information Technology.
-							<br />
-							<br />
-							As a<b className='yellow'> Full-Stack </b>developer,
-							I enjoy tackling new challenges and continuously
-							expanding my skillset.
-							<br />
-							<br />I am proficient in
-							<b className='yellow'> Java, </b>
-							<b className='yellow'> Spring Boot, </b>
-							<b className='yellow'> JavaScript, </b>
-							<b className='yellow'> React, and</b>
-							<b className='yellow'> AWS, </b>
-							as well as have basic knowledge in other programming
-							languages such as C, Python, and
-							<b className='yellow'> GraphQL.</b>
+							<span className='yellow'> Texas.</span>
 							<br />
 							<br />I have a passion for working with{' '}
 							<b className='yellow'>Java, Spring Boot, AWS</b> and
@@ -57,11 +34,31 @@ const About = () => {
 									{' '}
 									modern Javascript libraries and frameworks
 								</b>
+								with
+								<b className='yellow'> React and Angular.</b>
 							</i>
-							&nbsp; like
-							<i>
-								<b className='yellow'> React.js</b>
-							</i>
+							<br />
+							<br />
+							As a<b className='yellow'> Full-Stack </b>developer,
+							I build sclable and robus web applications. I enjoy
+							tackling new challenges and continuously expanding
+							my skillset.
+							<br />
+							<br />I am proficient in
+							<b className='yellow'> Java, </b>
+							<b className='yellow'> Spring Boot, </b>
+							<b className='yellow'> JavaScript, </b>
+							<b className='yellow'> Angular, </b>
+							<b className='yellow'> React, and</b>
+							<b className='yellow'> AWS, </b>
+							as well as have basic knowledge in other programming
+							languages such as C, Python, and
+							<b className='yellow'> GraphQL.</b>
+							<br />
+							<br />
+							I am currently pursuing my master's in Computer
+							Science. I graduated with a Bachelor's degree in
+							Information Technology.
 							<br />
 							<br />I am also interested in building new
 							<i>

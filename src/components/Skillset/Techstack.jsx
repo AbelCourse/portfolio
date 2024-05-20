@@ -3,6 +3,7 @@ import { Col, Row } from 'react-bootstrap';
 import { DiGit, DiNodejs } from 'react-icons/di';
 import { FaJava } from 'react-icons/fa6';
 import {
+	SiAngular,
 	SiExpress,
 	SiGraphql,
 	SiHibernate,
@@ -67,6 +68,12 @@ const Techstack = () => {
 				md={2}
 				className='tech-icons'>
 				<SiReact />
+			</Col>
+			<Col
+				xs={4}
+				md={2}
+				className='tech-icons'>
+				<SiAngular />
 			</Col>
 
 			<Col
