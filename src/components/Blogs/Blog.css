@@ -1,0 +1,49 @@
+.blogContainer {
+	display: flex;
+	justify-content: flex-start; /* Aligns the blog post to the left */
+	align-items: center;
+	height: 100vh;
+	padding-left: 20px; /* Adds some padding from the left side */
+}
+
+.blogPostLink {
+	text-decoration: none;
+	color: inherit;
+	position: relative;
+	z-index: 1000;
+}
+
+.blogPost {
+	border: 1px solid #ddd;
+	color: blue;
+	border-radius: 8px;
+	width: 300px;
+	padding: 16px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+	text-align: center;
+	transition: transform 0.3s, box-shadow 0.3s;
+	cursor: pointer;
+	background-color: white;
+	z-index: 1000;
+}
+
+.blogPost:hover {
+	transform: scale(1.05);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.thumbnail {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+}
+
+.title {
+	font-size: 18px;
+	margin: 12px 0;
+}
+
+.description {
+	font-size: 14px;
+	color: #555;
+}

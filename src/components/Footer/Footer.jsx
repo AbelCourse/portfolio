@@ -2,7 +2,10 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
 import { FaLinkedinIn } from 'react-icons/fa';
+import { GiEvilLove } from 'react-icons/gi';
 import logo from '../../assets/sLogo.png';
+
+const style = { color: 'pink', fontSize: '1.5em' };
 
 const Footer = () => {
 	let date = new Date();
@@ -20,7 +23,11 @@ const Footer = () => {
 				<Col
 					md='4'
 					className='footer-copywright'>
-					<span>Copyright © {year}</span>
+					<span>Made with </span>
+
+					<GiEvilLove style={style} />
+
+					<span>{year}</span>
 					<img
 						src={logo}
 						className='img-fluid logo'

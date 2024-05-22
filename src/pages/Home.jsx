@@ -49,7 +49,7 @@ const Home = () => {
 							<img
 								src={homeLogo}
 								alt='home pic'
-								className='img-fluid'
+								className='img-fluid bigImage'
 								style={{
 									maxHeight: '450px',
 								}}

@@ -6,18 +6,18 @@ import {
 	Routes,
 } from 'react-router-dom';
 
+import Blog from './pages/Blog';
 import Contact from './pages/Contact';
 import Home from './pages/Home';
 import Resume from './pages/Resume';
 import Skill from './pages/Skillset';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Preloader from './components/PreLoader';
 import ScrollToTop from './components/ScrollToTop';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
-import './App.css';
 import './style.css';
 
 function App() {
@@ -52,6 +52,10 @@ function App() {
 					<Route
 						path='/resume'
 						element={<Resume />}
+					/>
+					<Route
+						path='/blog'
+						element={<Blog />}
 					/>
 					<Route
 						path='/contact'

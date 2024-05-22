@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 // import { CgGitFork } from "react-icons/cg";
 import {
 	AiOutlineContacts,
-	AiOutlineFundProjectionScreen,
 	// AiFillStar,
 	AiOutlineHome,
 } from 'react-icons/ai';
 import { CgFileDocument } from 'react-icons/cg';
+import { FaBlog } from 'react-icons/fa';
 import { GiSkills } from 'react-icons/gi';
 
 function NavBar() {
@@ -77,6 +77,15 @@ function NavBar() {
 								onClick={() => updateExpanded(false)}>
 								<GiSkills style={{ marginBottom: '2px' }} />{' '}
 								Skillset
+							</Nav.Link>
+						</Nav.Item>
+
+						<Nav.Item>
+							<Nav.Link
+								as={Link}
+								to='/blog'
+								onClick={() => updateExpanded(false)}>
+								<FaBlog style={{ marginBottom: '2px' }} /> Blogs
 							</Nav.Link>
 						</Nav.Item>
 

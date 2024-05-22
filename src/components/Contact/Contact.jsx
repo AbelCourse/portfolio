@@ -1,4 +1,3 @@
-import emailjs from '@emailjs/browser';
 import React, { useRef, useState } from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
@@ -8,7 +7,13 @@ const Contact = () => {
 	const form = useRef();
 	const [done, setDone] = useState(false);
 	const [notDone, setNotDone] = useState(false);
-	const [formData, setFormData] = useState({});
+	const [formData, setFormData] = useState({
+		from_name: '',
+		reply_to: '',
+		message_title: '',
+		phone: '',
+		message: '',
+	});
 
 	const handleChange = (e) => {
 		setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -22,24 +27,36 @@ const Contact = () => {
 		if (!formData.from_name || !formData.reply_to || !formData.message) {
 			setNotDone(true);
 		} else {
-			//  Please use your own credentials from emailjs or i will recive your email
-
-			emailjs
-				.sendForm(
-					'service_niilndo',
-					'template_6z5idye',
-					form.current,
-					'VOBt6Akm1LhI5CZG-',
-				)
-				.then(
-					(result) => {
-						console.log(result.text);
+			console.log(JSON.stringify(formData));
+			fetch(
+				'https://9adgy4tm57.execute-api.us-east-1.amazonaws.com/prod/prod/submit',
+				{
+					method: 'POST',
+					mode: 'cors',
+					headers: {
+						'Content-Type': 'application/json',
+					},
+					body: JSON.stringify(formData),
+				},
+			)
+				.then((response) => response.json())
+				.then((data) => {
+					console.log(data);
+					if (data.message === 'Form submitted successfully') {
 						setDone(true);
-					},
-					(error) => {
-						console.log(error.text);
-					},
-				);
+						setFormData({
+							from_name: '',
+							reply_to: '',
+							message_title: '',
+							phone: '',
+							message: '',
+						});
+					}
+				})
+				.catch((error) => {
+					console.error(error);
+					setNotDone(true);
+				});
 		}
 	};
 
@@ -55,9 +72,9 @@ const Contact = () => {
 						touch with me, directly mail me at
 						abels.seyoum@gmail.com or use any of the social links
 						provided.
-						<br></br>
+						<br />
 						You can also use the contact form and I will get back to
-						you as soon as I see you message.
+						you as soon as I see your message.
 					</h3>
 
 					<h1 className='yellow'>Thank you!</h1>
@@ -75,6 +92,7 @@ const Contact = () => {
 							className='user'
 							placeholder='Name'
 							onChange={handleChange}
+							value={formData.from_name}
 						/>
 						<input
 							type='email'
@@ -82,15 +100,33 @@ const Contact = () => {
 							className='user'
 							placeholder='Email'
 							onChange={handleChange}
+							value={formData.reply_to}
+						/>
+						<input
+							type='text'
+							name='message_title'
+							className='user'
+							placeholder='Message Title'
+							onChange={handleChange}
+							value={formData.message_title}
+						/>
+						<input
+							type='text'
+							name='phone'
+							className='user'
+							placeholder='Phone (Optional)'
+							onChange={handleChange}
+							value={formData.phone}
 						/>
 						<textarea
 							name='message'
 							className='user'
 							placeholder='Message'
 							onChange={handleChange}
+							value={formData.message}
 						/>
 						<span className='not-done'>
-							{notDone && 'Please, fill all the input field'}
+							{notDone && 'Please, fill all the required fields.'}
 						</span>
 						<Button
 							type='submit'
@@ -100,7 +136,7 @@ const Contact = () => {
 						</Button>
 						<span className='done'>
 							{done &&
-								'Thanks for contacting me and be sure i have recieved your mail. If you are testing this functionality then i am confirming this thing working perfectly fine. If you have any serious query then i will reply. Also if you need me, you can conatct me on Linkedin.'}
+								'Thank you for shooting me a message! I have received your message and will get back to you soon.'}
 						</span>
 					</form>
 				</Col>

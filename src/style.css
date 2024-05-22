@@ -88,7 +88,34 @@ button:focus {
 }
 
 .img-fluid {
-	background-color: #fcfcfc;
+	background-color: white;
+	border: 1px solid #fff; /* Adds a white border */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.3); /* Adds a subtle shadow effect */
+	transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; /* Adds smooth transitions */
+}
+
+.img-fluid:hover {
+	transform: scale(1.05); /* Scales up the image on hover */
+	border-color: #37b9f1; /* Changes border color on hover */
+	box-shadow: 0 0 30px rgba(0, 0, 0, 0.5); /* Increases shadow intensity on hover */
+}
+.bigImage {
+	background-color: white;
+	width: 400px; /* Adjust the width and height as needed */
+	height: 400px; /* Same value to ensure a perfect circle */
+	border-radius: 50%; /* Makes the image circular */
+	border: 6px solid #fff; /* Adds a thicker white border */
+	box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Increases shadow intensity */
+	transition: transform 0.3s, border-color 0.3s, box-shadow 0.3s; /* Smooth transitions */
+	object-fit: cover; /* Ensures the image covers the entire container without distortion */
+	z-index: 1000;
+}
+
+.bigImage:hover {
+	transform: scale(1.1); /* Scales up the image on hover */
+	border-color: #37b9f1; /* Changes border color on hover */
+	box-shadow: 0 0 40px rgba(0, 0, 0, 0.7); /* Increases shadow intensity on hover */
+	z-index: 1000;
 }
 
 .navbar {
